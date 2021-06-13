@@ -1,42 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loadDetails } from "../../actions/detailAction";
 import "./Row.css";
-import axios from "axios";
 
-const Row = ({ title, isLargeRow, fetchUrl = false }) => {
-  const [movies, setMovies] = useState([]);
+const Row = ({ name, id, isLargeRow, backdrop_path, poster_path = false }) => {
+  const dispatch = useDispatch();
+
+  const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
+    dispatch(loadDetails(id));
+  };
 
   const baseUrl = "https://image.tmdb.org/t/p/original/";
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const request = await axios.get(fetchUrl);
-      setMovies(request.data.results);
-      return request;
-    };
-    fetchData();
-  }, [fetchUrl]);
-  return (
-    <div className="row">
-      <h2>{title}</h2>
-
-      <div className="row_posters">
-        {movies.map(
-          movie =>
-            ((isLargeRow && movie.poster_path) ||
-              (!isLargeRow && movie.backdrop_path)) && (
-              <img
-                key={movie.id}
-                className={`row_poster ${isLargeRow && "row_posterLarge"}`}
-                src={`${baseUrl}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt={movie.name}
-              />
-            )
-        )}
+  if (!isLargeRow) {
+    return (
+      <div className="row">
+        <Link to={`/movie/${id}`}>
+          <img
+            onClick={loadDetailHandler}
+            className="row_poster"
+            src={`${baseUrl}${backdrop_path}`}
+            alt={name}
+          />
+        </Link>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="row">
+        <Link to={`/movie/${id}`}>
+          <img
+            onClick={loadDetailHandler}
+            className="row_posterLarge"
+            src={`${baseUrl}${poster_path}`}
+            alt={name}
+          />
+        </Link>
+      </div>
+    );
+  }
 };
 
 export default Row;

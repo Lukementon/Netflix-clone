@@ -1,0 +1,129 @@
+.loginScreen {
+  height: 100%;
+  position: relative;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg")
+    center no-repeat;
+  background-size: cover;
+}
+
+.loginScreen_logo {
+  position: fixed;
+  width: 150px;
+  left: 0;
+  object-fit: contain;
+  padding-left: 20px;
+}
+
+.loginScreen_button {
+  position: fixed;
+  right: 20px;
+  margin-right: 10px;
+  top: 25px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.loginScreen_gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.loginScreen_body {
+  position: absolute;
+  top: 30%;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.loginScreen_body > h1 {
+  font-size: 3.125rem;
+  font-weight: 800px;
+  margin-bottom: 1rem;
+}
+
+.loginScreen_body > h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.loginScreen_body > h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.loginScreen_input > form > input {
+  padding: 10px;
+  width: 30%;
+  height: 30px;
+  max-width: 600px;
+  border: none;
+  outline: none;
+}
+
+.loginScreen_getStarted {
+  background-color: #e50914;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  padding: 16px 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 530px) {
+  .loginScreen_body {
+    top: 10%;
+    padding: 10px;
+  }
+  .loginScreen_body > h1 {
+    padding-top: 1rem;
+    font-size: 2rem;
+  }
+  .loginScreen_input > form {
+    display: flex;
+    flex-direction: column;
+  }
+  .loginScreen_input > form > input {
+    margin-top: 1rem;
+    width: 80%;
+    align-self: center;
+    padding: 5px;
+  }
+  .loginScreen_getStarted {
+    margin-top: 1rem;
+    width: 83%;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .loginScreen_button {
+    position: absolute;
+  }
+  .loginScreen_logo {
+    position: absolute;
+  }
+}

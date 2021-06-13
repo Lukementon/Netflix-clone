@@ -1,0 +1,11 @@
+.rows {
+  color: white;
+  display: flex;
+  padding: 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.rows::-webkit-scrollbar {
+  display: none;
+}

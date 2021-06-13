@@ -1,0 +1,146 @@
+.card_shadow {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+
+.movie_details {
+  margin-top: 2rem;
+  width: 50%;
+  color: #fff;
+  position: absolute;
+  background: #111;
+  z-index: 10;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.banner {
+  height: 600px;
+  object-fit: contain;
+  position: relative;
+  color: #fff;
+}
+
+.banner_button2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  background-color: rgba(30, 30, 30, 0.5);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.banner--fadeBottom2 {
+  height: 38rem;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(70, 70, 70, 0.1),
+    #111
+  );
+}
+
+.backdrop {
+  width: 100%;
+  object-fit: contain;
+}
+
+.info_text {
+  padding: 2rem;
+  display: flex;
+  width: 100%;
+}
+
+.movie_info {
+  width: 65%;
+}
+
+.production_info {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5rem;
+  padding-top: 5rem;
+}
+.production_info > h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding: 0.2rem 0rem;
+}
+.production_info > h3 > span {
+  color: gray;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.movie_description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.screenshot {
+  width: 100%;
+  object-fit: cover;
+  max-height: 1000px;
+}
+
+@media screen and (max-width: 1500px) {
+  .movie_details {
+    width: 100%;
+    margin-top: 0rem;
+  }
+  .info_text {
+    display: block;
+  }
+  .movie_info {
+    width: 80%;
+    justify-self: center;
+  }
+  .production_info {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0rem;
+    padding: 2rem 0rem 0rem 0rem;
+  }
+  .production_info > h3 {
+    padding: 0rem 0.5rem 0rem 0rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .movie_info {
+    text-align: center;
+  }
+}

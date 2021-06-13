@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadBanner } from "../../actions/movieAction";
+
 import "./Banner.css";
 
 const Banner = () => {
@@ -34,6 +35,7 @@ const Banner = () => {
 
         <div className="banner_buttons">
           <button className="banner_button">Play</button>
+
           <button className="banner_button">My List</button>
         </div>
 
